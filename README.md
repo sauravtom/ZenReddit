@@ -1,7 +1,7 @@
 ZenReddit
 =========
 
-Simple app to browse reddit download images and watch videos, available on play store.
+Simple android app to waste reddit download images and watch videos, available on [Play Store](https://play.google.com/store/apps/details?id=com.sauravtom.zenreddit)
 
 <a href="https://play.google.com/store/apps/details?id=com.sauravtom.zenreddit">
   <img alt="Get it on Google Play"
@@ -16,4 +16,4 @@ List of Features
 + Vimeo player (soon)
 + Manage login via multiple accounts (soon)
 
-Pull requests and feature suggestions are more than welcome.
+Pull requests and feature suggestions (or bug reports if you like to call it that) are more than welcome.
