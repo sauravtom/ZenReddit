@@ -1,7 +1,7 @@
 ZenReddit
 =========
 
-Simple android app to waste reddit download images and watch videos, available on [Play Store](https://play.google.com/store/apps/details?id=com.sauravtom.zenreddit)
+Simple android app to browse reddit, available on [Play Store](https://play.google.com/store/apps/details?id=com.sauravtom.zenreddit)
 
 <a href="https://play.google.com/store/apps/details?id=com.sauravtom.zenreddit">
   <img alt="Get it on Google Play"
