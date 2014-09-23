@@ -1,0 +1,24 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+
+    <item android:id="@+id/action_reload"
+        android:icon="@drawable/ic_action_navigation_refresh"
+        android:title="Reload"
+        android:showAsAction="ifRoom"
+        tools:ignore="AppCompatResource" />
+
+    <item android:id="@+id/action_share"
+        android:icon="@drawable/ic_action_social_share"
+        android:title="Share"
+        android:actionProviderClass= "android.widget.ShareActionProvider"
+        android:showAsAction="never"/>
+
+    <item android:id="@+id/action_download"
+        android:icon="@drawable/ic_action_av_download"
+        android:title="Download"
+        android:showAsAction="never"/>
+
+
+</menu>
