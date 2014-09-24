@@ -17,3 +17,5 @@ List of Features
 + Manage login via multiple accounts (soon)
 
 Pull requests and feature suggestions (or bug reports if you like to call it that) are more than welcome.
+
+MIT License http://sauravtom.mit-license.org/
