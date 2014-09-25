@@ -312,7 +312,7 @@ public class MyActivity extends Activity {
         if(doubleBackToExitPressedOnce){
             finish();
         }
-
+        getActionBar().show();
         this.doubleBackToExitPressedOnce = true;
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
         String url = WebViewFragment.webView.getUrl();
@@ -445,6 +445,28 @@ public class MyActivity extends Activity {
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        savedInstanceState.putString("url", WebViewFragment.webView.getUrl());
+        savedInstanceState.putInt("tab_index", getActionBar().getSelectedNavigationIndex());
+
+    }
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore UI state from the savedInstanceState.
+        // This bundle has also been passed to onCreate.
+        int tab_index = savedInstanceState.getInt("tab_index");
+        String url = savedInstanceState.getString("url");
+        InitFragment(url);
+        if(tab_index == -1)tab_index=0;
+        getActionBar().setSelectedNavigationItem(tab_index);
     }
 
 }

@@ -102,7 +102,13 @@ public class WebViewFragment extends Fragment {
                 try {
                     if(type == "youtube") {
                         url = changeYoutubeUrl(url);
-                        getActivity().getActionBar().setTitle("Youtube Player");
+                        //getActivity().getActionBar().setTitle("Youtube Player");
+                        getActivity().getActionBar().hide();
+                    }
+                    else if(type == "vimeo") {
+                        url = changeVimeoUrl(url);
+                        getActivity().getActionBar().hide();
+                        //getActivity().getActionBar().setTitle("Vimeo Player");
                     }
                     else if (type == "comments/external") {
                         getActivity().getActionBar().setTitle("");
@@ -131,6 +137,7 @@ public class WebViewFragment extends Fragment {
 
     public static String typeUrl(String url){
         if(url.contains("youtube.com/") || url.contains("youtu.be")) return "youtube";
+        else if(url.contains("vimeo.com/")) return "vimeo";
 
         else if(url.startsWith("mailto:")){
            // getActivity().getActionBar().
@@ -170,6 +177,12 @@ public class WebViewFragment extends Fragment {
         else{
             return url;
         }
+    }
+
+    public String changeVimeoUrl(String url){
+        String id = url.substring(url.lastIndexOf('/') + 1);
+        String new_url = "http://player.vimeo.com/video/"+ id + "?autoplay=1";
+        return new_url;
     }
 
 
