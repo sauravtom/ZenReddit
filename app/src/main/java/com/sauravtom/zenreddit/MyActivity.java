@@ -29,6 +29,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+import in.championswimmer.sfg.lib.SimpleFingerGestures;
+
 public class MyActivity extends Activity {
 
     private DrawerLayout mDrawerLayout;
@@ -131,6 +133,50 @@ public class MyActivity extends Activity {
         AdView adView = (AdView)this.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+
+        /*Not working
+        SimpleFingerGestures mySfg = new SimpleFingerGestures();
+
+        mySfg.setOnFingerGestureListener(new SimpleFingerGestures.OnFingerGestureListener()
+        {
+            @Override
+            public boolean onSwipeUp ( int fingers, long gestureDuration){
+                Toast.makeText(getBaseContext(), "Swipe Up", Toast.LENGTH_SHORT).show();
+                //grtv.setText("swiped " + fingers + " up");
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeDown ( int fingers, long gestureDuration){
+                Toast.makeText(getBaseContext(), "Swipe Down", Toast.LENGTH_SHORT).show();
+                //grtv.setText("swiped " + fingers + " down");
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeLeft ( int fingers, long gestureDuration){
+                //grtv.setText("swiped " + fingers + " left");
+                return false;
+            }
+
+            @Override
+            public boolean onSwipeRight ( int fingers, long gestureDuration){
+                //grtv.setText("swiped " + fingers + " right");
+                return false;
+            }
+            @Override
+            public boolean onPinch(int fingers, long gestureDuration) {
+                //grtv.setText("pinch");
+                return false;
+            }
+
+            @Override
+            public boolean onUnpinch(int fingers, long gestureDuration) {
+                //grtv.setText("unpinch");
+                return false;
+            }
+        });
+        */
     }
 
     public void AddTabs(){
@@ -455,6 +501,7 @@ public class MyActivity extends Activity {
         // killed and restarted.
         savedInstanceState.putString("url", WebViewFragment.webView.getUrl());
         savedInstanceState.putInt("tab_index", getActionBar().getSelectedNavigationIndex());
+        savedInstanceState.putString("subreddit", getActionBar().getTitle().toString());
 
     }
     @Override
@@ -465,8 +512,14 @@ public class MyActivity extends Activity {
         int tab_index = savedInstanceState.getInt("tab_index");
         String url = savedInstanceState.getString("url");
         InitFragment(url);
-        if(tab_index == -1)tab_index=0;
-        getActionBar().setSelectedNavigationItem(tab_index);
+        if (tab_index == -1) {
+            String subreddit = savedInstanceState.getString("subreddit");
+            getActionBar().setTitle(subreddit);
+            getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        } else {
+            getActionBar().setSelectedNavigationItem(tab_index);
+        }
     }
+
 
 }
