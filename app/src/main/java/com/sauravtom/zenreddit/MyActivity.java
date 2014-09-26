@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -359,9 +361,11 @@ public class MyActivity extends Activity {
             finish();
         }
         getActionBar().show();
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
+        getActionBar().setIcon(R.drawable.ic_launcher);
 
         String url = WebViewFragment.webView.getUrl();
-        
+
         if (url.startsWith("http://www.reddit.com/.compact")) {
             this.doubleBackToExitPressedOnce = true;
             Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();

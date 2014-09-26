@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -101,13 +103,15 @@ public class WebViewFragment extends Fragment {
                 try {
                     if(type == "youtube") {
                         url = changeYoutubeUrl(url);
-                        //getActivity().getActionBar().setTitle("Youtube Player");
-                        getActivity().getActionBar().hide();
+                        //getActivity().getActionBar().hide();
+                        getActivity().getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+                        getActivity().getActionBar().setIcon(R.drawable.yt_icon);
                     }
                     else if(type == "vimeo") {
                         url = changeVimeoUrl(url);
-                        getActivity().getActionBar().hide();
-                        //getActivity().getActionBar().setTitle("Vimeo Player");
+                        //getActivity().getActionBar().hide();
+                        getActivity().getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
+                        getActivity().getActionBar().setIcon(R.drawable.vm_icon);
                     }
                     else if(type == "subreddit") {
                         url = url + ".compact";
