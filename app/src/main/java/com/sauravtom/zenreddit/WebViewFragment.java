@@ -47,14 +47,12 @@ public class WebViewFragment extends Fragment {
 
         webView = (WebView)v.findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
-        //webView.loadUrl("http://www.reddit.com");
 
 
         spinner = (ProgressBar)v.findViewById(R.id.progressbar);
         spinner.setIndeterminate(true);
         spinner.setVisibility(View.GONE);
 
-        //WebView mWebView = (WebView) findViewById(R.id.webView);
         webView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -110,6 +108,9 @@ public class WebViewFragment extends Fragment {
                         getActivity().getActionBar().hide();
                         //getActivity().getActionBar().setTitle("Vimeo Player");
                     }
+                    else if(type == "subreddit") {
+                        url = url + ".compact";
+                    }
                     else if (type == "comments/external") {
                         getActivity().getActionBar().setTitle("");
                     }
@@ -140,12 +141,11 @@ public class WebViewFragment extends Fragment {
         else if(url.contains("vimeo.com/")) return "vimeo";
 
         else if(url.startsWith("mailto:")){
-           // getActivity().getActionBar().
-            //v.findViewById(R.id.action_share).performClick();
+            //share that shit
         }
 
         //Subreddits
-        else if(!url.contains("/comments/") && url.startsWith("http://www.reddit.com") && url != "http://www.reddit.com/.compact"){
+        else if(url.startsWith("http://www.reddit.com") && !url.contains("/comments/") && !url.endsWith(".compact") && url != "http://www.reddit.com/.compact"){
             return "subreddit";
         }
         // comments or external links

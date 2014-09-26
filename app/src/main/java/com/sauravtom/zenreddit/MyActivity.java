@@ -185,9 +185,9 @@ public class MyActivity extends Activity {
 
         ActionBar.TabListener tabListener = new ActionBar.TabListener() {
             public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                String url = "http://reddit.com/r/"+tab.getText().toString()+"/.compact";
+                String url = "http://www.reddit.com/r/"+tab.getText().toString()+"/.compact";
                 if (tab.getText().toString() == "Home"){
-                    url = "http://reddit.com/.compact";
+                    url = "http://www.reddit.com/.compact";
                 }
                 try{
                     getActionBar().setTitle("/r/"+tab.getText().toString());
@@ -359,9 +359,13 @@ public class MyActivity extends Activity {
             finish();
         }
         getActionBar().show();
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
         String url = WebViewFragment.webView.getUrl();
+
+        if (url == "http://www.reddit.com/.compact") {
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+        }
 
         if(!url.contains("/comments/") && url.startsWith("http://www.reddit.com") && url != "http://www.reddit.com/.compact"){
             getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
