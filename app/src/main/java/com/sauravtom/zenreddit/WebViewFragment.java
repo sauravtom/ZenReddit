@@ -47,6 +47,7 @@ public class WebViewFragment extends Fragment {
 
         webView = (WebView)v.findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setBuiltInZoomControls(false);
 
 
         spinner = (ProgressBar)v.findViewById(R.id.progressbar);
@@ -171,7 +172,6 @@ public class WebViewFragment extends Fragment {
         if(matcher.find()){
             String id = matcher.group();
             String new_url = "http://www.youtube.com/embed/"+ id + "?autoplay=1";
-            //Toast.makeText(getApplicationContext(), new_url,Toast.LENGTH_LONG).show();
             return new_url;
         }
         else{

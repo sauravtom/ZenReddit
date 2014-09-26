@@ -361,8 +361,8 @@ public class MyActivity extends Activity {
         getActionBar().show();
 
         String url = WebViewFragment.webView.getUrl();
-
-        if (url == "http://www.reddit.com/.compact") {
+        
+        if (url.startsWith("http://www.reddit.com/.compact")) {
             this.doubleBackToExitPressedOnce = true;
             Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
         }
