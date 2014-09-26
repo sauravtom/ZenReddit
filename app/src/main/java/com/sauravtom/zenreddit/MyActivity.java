@@ -361,7 +361,7 @@ public class MyActivity extends Activity {
             finish();
         }
         getActionBar().show();
-        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
+        getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#C7DEF4")));
         getActionBar().setIcon(R.drawable.ic_launcher);
 
         String url = WebViewFragment.webView.getUrl();

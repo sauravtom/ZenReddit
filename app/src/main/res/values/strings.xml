@@ -22,4 +22,6 @@
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
 
+    <color name="reddit_blue">#C7DEF4</color>
+
 </resources>
