@@ -63,7 +63,8 @@ public class MyActivity extends Activity {
             alert.show();
         }
 
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //No need for full screen, your app is not that important saurav, huh
+        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().requestFeature(Window.FEATURE_PROGRESS);
         setContentView(R.layout.activity_main);
 
@@ -131,10 +132,14 @@ public class MyActivity extends Activity {
 
         InitFragment("0");
         AddTabs();
+
+        /*Hide ads as of now
         // Look up the AdView as a resource and load a request.
         AdView adView = (AdView)this.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+        */
+
 
         /*Not working
         SimpleFingerGestures mySfg = new SimpleFingerGestures();
@@ -322,7 +327,7 @@ public class MyActivity extends Activity {
         MenuItem icon_download = menu.findItem(R.id.action_download);
         MenuItem icon_openBrowser = menu.findItem(R.id.action_openBrowser);
 
-        Toast.makeText(getBaseContext(),WebViewFragment.webView.getTitle(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getBaseContext(),WebViewFragment.webView.getTitle(), Toast.LENGTH_SHORT).show();
 
 
         icon_download.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
