@@ -320,6 +320,10 @@ public class MyActivity extends Activity {
         MenuItem icon_share = menu.findItem(R.id.action_share);
         MenuItem icon_reload = menu.findItem(R.id.action_reload);
         MenuItem icon_download = menu.findItem(R.id.action_download);
+        MenuItem icon_openBrowser = menu.findItem(R.id.action_openBrowser);
+
+        Toast.makeText(getBaseContext(),WebViewFragment.webView.getTitle(), Toast.LENGTH_SHORT).show();
+
 
         icon_download.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -339,6 +343,15 @@ public class MyActivity extends Activity {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 WebViewFragment.webView.reload();
+                return false;
+            }
+        });
+
+        icon_openBrowser.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(WebViewFragment.webView.getUrl()));
+                startActivity(browserIntent);
                 return false;
             }
         });

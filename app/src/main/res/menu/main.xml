@@ -20,5 +20,8 @@
         android:title="Download"
         android:showAsAction="never"/>
 
+    <item android:id="@+id/action_openBrowser"
+        android:title="Open in Browser"
+        android:showAsAction="never"/>
 
 </menu>
