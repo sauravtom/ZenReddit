@@ -8,7 +8,7 @@ android {
         applicationId "com.sauravtom.zenreddit"
         minSdkVersion 15
         targetSdkVersion 19
-        versionCode 2
+        versionCode 3
         versionName "1.1"
     }
     buildTypes {
