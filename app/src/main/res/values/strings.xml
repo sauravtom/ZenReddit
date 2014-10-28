@@ -5,17 +5,16 @@
     <string name="action_settings">Settings</string>
 
     <string-array name="menus">
-        <item>GoTo a subreddit</item>
-        <item>My Subreddits</item>
-        <item>My Messages</item>
-        <item>Mod Mail</item>
-        <item>Search</item>
-        <item>New Message</item>
-        <item>Submit</item>
-        <item>Random Subreddit</item>
-        <item>Login</item>
-        <item>About ZenReddit</item>
-        <item>Get Pro</item>
+        <item>सुर्खिया</item>
+        <item>विश्व</item>
+        <item>भारत</item>
+        <item>व्यवसाय</item>
+        <item>मनोरंजन</item>
+        <item>खेलकूद</item>
+        <item>और सुर्खियां</item>
+        <item>Anya संपादक</item>
+        <item>Settings</item>
+        <item>About</item>
     </string-array>
 
 
